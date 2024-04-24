@@ -23,15 +23,14 @@ public class FrogSimulation
 			numHops += 1;
 		}
 		if(goalDistance - pos <= 0) {
+			return true;
+		}
+		else if(pos >= 0) {
 			return false;
 		}
-		if(pos >= 0) {
+		else if(numHops >= maxHops) {
 			return false;
 		}
-		if(numHops >= maxHops) {
-			return false;
-		}
-		return true;
 
 	}
 	
