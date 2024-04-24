@@ -22,16 +22,17 @@ public class FrogSimulation
 			pos = pos + hopDistance();
 			numHops += 1;
 		}
-		if(goalDistance - pos <= 0) {
-			return true;
-		}
-		else if(pos >= 0) {
+		
+		if(pos >= 0) {
 			return false;
 		}
 		else if(numHops >= maxHops) {
 			return false;
 		}
-
+		else if(goalDistance - pos <= 0) {
+			return true;
+		}
+		return false;
 	}
 	
 	public double runSimulations(int num)
